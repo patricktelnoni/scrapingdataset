@@ -1,0 +1,16 @@
+setup.py
+dataset/__init__.py
+dataset/items.py
+dataset/loaders.py
+dataset/middlewares.py
+dataset/pipelines.py
+dataset/settings.py
+dataset/spiders/__init__.py
+dataset/spiders/detik_spider.py
+dataset/spiders/kompas_spider.py
+dataset/spiders/tirto_spider.py
+project.egg-info/PKG-INFO
+project.egg-info/SOURCES.txt
+project.egg-info/dependency_links.txt
+project.egg-info/entry_points.txt
+project.egg-info/top_level.txt
