@@ -51,7 +51,7 @@ class KompasSpider(scrapy.Spider):
                     doc['title'],
                     doc['content']
             ]
-            yield {'judul': judul, 'isi': cleaned_article}
+            yield {'category': category,'judul': judul, 'isi': cleaned_article}
             writer.writerow(data)
 
                 # yield {'title': content.css('.jdl h1 ::text').get(),

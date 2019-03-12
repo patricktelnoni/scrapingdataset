@@ -28,7 +28,7 @@ class DetikSpider(scrapy.Spider):
                 doc['title']    = content.css('.jdl h1 ::text').get()
                 doc['content']  = cleaned_article
                 data = [
-                        self.id,
+                        # self.id,
                         category,
                         doc['title'],
                         doc['content']

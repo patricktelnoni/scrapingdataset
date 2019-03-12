@@ -28,11 +28,12 @@ class DetikSpider(scrapy.Spider):
                 doc['title']    = content.css('.jdl h1 ::text').get()
                 doc['content']  = cleaned_article
                 data = [
-                        self.id,
+                        # self.id,
                         category,
                         doc['title'],
                         doc['content']
                 ]
+                yield {'category': category, 'judul': doc['title'], 'isi': doc['content']}
                 writer.writerow(data)
         f.close()
         self.id += 1
