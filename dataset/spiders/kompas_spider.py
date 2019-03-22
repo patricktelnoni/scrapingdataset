@@ -42,7 +42,7 @@ class KompasSpider(scrapy.Spider):
         with open('datasetkompas.csv', 'a') as f:
             writer = csv.writer(f)
             judul           = response.xpath('//h1[@class="read__title"]/text()').extract()
-            cleaned_article = [p for p in response.xpath('//div[@class="read__content"]/descendant::text()').extract()]
+            cleaned_article = [' '.join(p.xpath('//p/text()').extract()) for p in response.xpath('//div[@class="read__content"]')]
             doc['title']    = judul
             doc['content']  = cleaned_article
             data = [

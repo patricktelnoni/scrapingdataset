@@ -25,7 +25,8 @@ class DetikSpider(scrapy.Spider):
             writer = csv.writer(f)
             for content in response.css('.detail_content'):
                 cleaned_article = content.xpath('normalize-space(.//div[@id="detikdetailtext"])').extract()
-                doc['title']    = content.css('.jdl h1 ::text').get()
+                # doc['title']    = content.css('.jdl h1 ::text').get()
+                doc['title']    = content.xpath('normalize-space(.//div[@class="jdl"]/h1/text())').extract()
                 doc['content']  = cleaned_article
                 data = [
                         # self.id,
